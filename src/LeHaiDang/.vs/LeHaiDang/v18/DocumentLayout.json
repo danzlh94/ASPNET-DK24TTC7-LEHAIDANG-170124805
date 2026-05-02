@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\ASPNET-DK24TTC7-LEHAIDANG-170124805\\src\\LeHaiDang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8F3CF41E-D19D-4D91-AF21-190580B4A190}|LeHaiDang.csproj|c:\\users\\admin\\desktop\\aspnet-dk24ttc7-lehaidang-170124805\\src\\lehaidang\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8F3CF41E-D19D-4D91-AF21-190580B4A190}|LeHaiDang.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\ASPNET-DK24TTC7-LEHAIDANG-170124805\\src\\LeHaiDang\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\ASPNET-DK24TTC7-LEHAIDANG-170124805\\src\\LeHaiDang\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-05-02T06:37:18.562Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+﻿@{
+    ViewBag.Title = "MEGATECH - Thức uống giải khát hàng đầu";
+    ViewBag.SeoDescription = "Chuyên cung cấp các loại nước giải khát, trà thảo mộc và cà phê chất lượng cao.";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link href="~/Content/assets/styles/bootstrap4/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/OwlCarousel2-2.2.1/animate.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+    <link href="~/Content/assets/styles/responsive.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-color: #ea580c; /* Cam cháy */
+            --secondary-color: #047857; /* Xanh rêu tươi mát */
+            --bg-cream: #fffbeb; /* Nền màu kem nhạt */
+            --text-dark: #1c1917;
+            --card-bg: #ffffff;
+        }
+
+        body { 
+            font-family: 'Nunito', sans-serif; 
+            background-color: var(--bg-cream); 
+            color: var(--text-dark); 
+            overflow-x: hidden; 
+        }
+
+        /* ---------------------------------
+           1. SLIDER KIỂU "ĐẢO NỔI" (FLOATING ISLAND)
+        -----------------------------------*/
+        .slider-wrapper {
+            padding: 20px;
+            background-color: var(--bg-cream);
+        }
+
+        #homeCarousel {
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(4, 120, 87, 0.15);
+            position: relative;
+        }
+
+        .carousel-item {
+            height: 550px;
+            background-color: var(--secondary-color);
+        }
+
+        .carousel-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(4, 120, 87, 0.9) 0%, rgba(4, 120, 87, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+        }
+
+        .carousel-caption-custom {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            z-index: 10;
+            color: #fff;
+            text-align: left;
+            max-width: 450px;
+        }
+
+        .carousel-caption-custom h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--bg-cream);
+            letter-spacing: -1px;
+        }
+
+        .carousel-caption-custom p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            font-weight: 600;
+            color: #d1fae5; /* Xanh lá siêu nhạt */
+        }
+
+        .shop_now_button {
+            display: inline-block;
+            background: var(--primary-color);
+            padding: 16px 45px;
+            border-radius: 50px; /* Bo tròn hoàn toàn */
+            color: #fff !important;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 3px solid var(--primary-color);
+        }
+
+        .shop_now_button:hover {
+            background: transparent;
+            color: var(--primary-color) !important;
+            transform: scale(1.05);
+        }
+
+        /* ---------------------------------
+           2. SECTION LAYOUTS
+        -----------------------------------*/
+        .section_container { 
+            padding: 70px 0; 
+        }
+
+        /* ---------------------------------
+           3. LỢI ÍCH DỊCH VỤ - DẠNG VIÊN THUỐC (PILL SHAPE)
+        -----------------------------------*/
+        .benefit {
+            padding: 20px 0 60px;
+        }
+
+        .benefit_card {
+            background: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 50px; /* Dáng viên thuốc */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+        }
+
+        .benefit_card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(4, 120, 87, 0.1);
+        }
+
+        .benefit_icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .benefit_icon i {
+            font-size: 24px;
+            color: var(--secondary-color);
+        }
+
+        .benefit_card:hover .benefit_icon {
+            background: var(--secondary-color);
+        }
+        .benefit_card:hover .benefit_icon i {
+            color: #fff;
+        }
+
+        .benefit_content {
+            text-align: left;
+        }
+
+        .benefit_content h6 {
+            font-weight: 800;
+            margin-bottom: 3px;
+            font-size: 15px;
+            color: var(--secondary-color);
+        }
+
+        .benefit_content p {
+            font-size: 12px;
+            color: #6b7280;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* ---------------------------------
+           4. FOOTER THIÊN NHIÊN (XANH RÊU)
+        -----------------------------------*/
+        .footer {
+            background: var(--secondary-color);
+            color: #ecfdf5;
+            padding: 80px 0 0;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            margin-top: 40px;
+        }
+
+        .footer_title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--bg-cream);
+        }
+
+        .footer_list { list-style: none; padding: 0; }
+        .footer_list li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 600; }
+        .footer_list li i { margin-right: 10px; color: #6ee7b7; width: 20px; text-align: center; }
+        .footer_list li a { color: #a7f3d0; font-size: 15px; transition: 0.3s; text-decoration: none; }
+        .footer_list li a:hover { color: #fff; padding-left: 8px; }
+        
+        .footer_social {
+            padding: 0;
+            margin-top: 20px;
+        }
+        .footer_social li { 
+            display: inline-block; 
+            margin-right: 10px; 
+        }
+        .footer_social li a { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px; /* Nút mxh vuông bo tròn */
+            color: #fff; 
+            font-size: 20px; 
+            transition: 0.3s; 
+        }
+        .footer_social li a:hover { 
+            background: var(--primary-color);
+            transform: rotate(10deg);
+        }
+
+        .footer_bottom {
+            margin-top: 60px;
+            padding: 25px 0;
+            background: #065f46; /* Xanh rêu đậm hơn chút xíu */
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #a7f3d0;
+        }
+
+        /* ---------------------------------
+           5. RESPONSIVE
+        -----------------------------------*/
+        @@media (max-width: 991px) {
+            .carousel-item { height: 450px; }
+            .slider-wrapper { padding: 10px; }
+            #homeCarousel { border-radius: 20px; }
+            .carousel-caption-custom {
+                left: 5%; right: 5%;
+                max-width: none;
+            }
+            .carousel-caption-custom h1 { font-size: 2.5rem; }
+            .footer { border-top-left-radius: 30px; border-top-right-radius: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="super_container">
+        
+        <div class="slider-wrapper container-fluid">
+            <div id="homeCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=1964&auto=format&fit=crop" alt="Trà trái cây nhiệt đới">
+                        <div class="carousel-caption-custom">
+                            <h1 class="animated fadeInLeft">Vị Ngọt<br>Thiên Nhiên</h1>
+                            <p class="animated fadeInRight">Thưởng thức sự tươi mát nguyên bản từ những trái cây mọng nước và thảo mộc tự nhiên nhất.</p>
+                            <a href="/san-pham" class="shop_now_button animated fadeInUp">Đặt ngay</a>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1965&auto=format&fit=crop" alt="Cà phê phin">
+                        <div class="carousel-caption-custom">
+                            <h1 class="animated fadeInLeft">Cà Phê<br>Đậm Vị</h1>
+                            <p class="animated fadeInRight">Đánh thức mọi giác quan với ly cà phê nguyên chất, thơm lừng hương vị truyền thống.</p>
+                            <a href="/san-pham" class="shop_now_button animated fadeInUp">Khám phá</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="carousel-control-prev" href="#homeCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#homeCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+        <div class="benefit">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="benefit_card">
+                            <div class="benefit_icon"><i class="fa fa-motorcycle"></i></div>
+                            <div class="benefit_content">
+                                <h6>Giao Nhanh 30p</h6>
+                                <p>Đồ uống tới tay vẫn mát lạnh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="benefit_card">
+                            <div class="benefit_icon"><i class="fa fa-envira"></i></div>
+                            <div class="benefit_content">
+                                <h6>Tươi Sạch 100%</h6>
+                                <p>Nguyên liệu chuẩn nông trại</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="benefit_card">
+                            <div class="benefit_icon"><i class="fa fa-qrcode"></i></div>
+                            <div class="benefit_content">
+                                <h6>Tiện Lợi</h6>
+                                <p>Quét mã thanh toán siêu tốc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="benefit_card">
+                            <div class="benefit_icon"><i class="fa fa-heart"></i></div>
+                            <div class="benefit_content">
+                                <h6>Phục Vụ Bằng Tâm</h6>
+                                <p>Luôn lắng nghe khách hàng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_container">
+            <div class="container">
+                @Html.Action("MenuProductCategory", "Menu")
+            </div>
+        </div>
+
+        <div class="section_container" style="background-color: #fff; border-radius: 40px; margin: 0 20px;">
+            <div class="container">
+                @Html.Action("MenuArrivals", "Menu")
+            </div>
+        </div>
+
+        <div class="section_container">
+            <div class="container">
+                @Html.Action("Partial_ProductsHot", "Products")
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="footer_title">MEGATECH F&B</h4>
+                        <p style="color: #a7f3d0; font-size: 15px; line-height: 1.8; margin-bottom: 0; font-weight: 600;">
+                            Chúng tôi tin rằng, một ly nước ngon không chỉ giải khát mà còn chữa lành tâm hồn. Hãy để thiên nhiên nâng niu cảm xúc của bạn mỗi ngày.
+                        </p>
+                        <ul class="footer_social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-5 mb-lg-0 px-lg-5">
+                        <h4 class="footer_title">Thực Đơn</h4>
+                        <ul class="footer_list">
+                            <li><i class="fa fa-check-circle"></i><a href="/san-pham">Cà phê pha máy</a></li>
+                            <li><i class="fa fa-check-circle"></i><a href="/san-pham">Trà trái cây nhiệt đới</a></li>
+                            <li><i class="fa fa-check-circle"></i><a href="/san-pham">Trà sữa trân châu</a></li>
+                            <li><i class="fa fa-check-circle"></i><a href="/tin-tuc">Nước ép detox</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <h4 class="footer_title">Ghé Thăm Chúng Tôi</h4>
+                        <ul class="footer_list">
+                            <li><i class="fa fa-map-marker"></i> <span style="color:#ecfdf5; font-size: 15px;">123 Đường Cà Phê, TP. Trà Vinh</span></li>
+                            <li><i class="fa fa-phone"></i> <span style="color:#ecfdf5; font-size: 15px;">0123 456 789</span></li>
+                            <li><i class="fa fa-clock-o"></i> <span style="color:#ecfdf5; font-size: 15px;">07:00 - 22:30 Hàng ngày</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer_bottom">
+                <div class="container">
+                    &copy; 2026 Bản quyền thuộc về Lê Hải Đăng.
+                </div>
+            </div>
+        </footer>
+        </div>
+
+    <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/assets/styles/bootstrap4/popper.js"></script>
+    <script src="~/Content/assets/styles/bootstrap4/bootstrap.min.js"></script>
+</body>
+</html>
